@@ -36,3 +36,23 @@ def calculate_team_effort_hours():
         print(f"Available Effort-Hours for Team: {total_available_effort_hours}")
     except ValueError:
         print("Invalid input. Please enter integers for numerical values and ranges separated by a comma for hours/day.")
+
+def main():
+    """Provides the user interface and handles option selection."""
+    while True:
+        print("\nHome Menu:")
+        print("1. Calculate Sprint Team's Velocity")
+        print("2. Calculate Team Effort-Hour Capacity")
+        print("3. Exit")
+
+        choice = input("Enter your choice (1, 2, or 3): ")
+
+        if choice == '1':
+            calculate_sprint_velocity()
+        elif choice == '2':
+            calculate_team_effort_hours()
+        elif choice == '3':
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice. Please enter 1, 2, or 3.")
