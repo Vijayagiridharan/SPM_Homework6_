@@ -15,8 +15,10 @@ class TestCalculateSprintVelocity(unittest.TestCase):
     def test_empty_input(self):
         points_input = ""
         expected_output = "No points entered. Please enter the completion points of previous sprints."
+
         with patch('builtins.input', return_value=points_input):
             with patch('builtins.print') as mock_print:
+
                 calculate_sprint_velocity()
                 mock_print.assert_called_once_with(expected_output)
 
